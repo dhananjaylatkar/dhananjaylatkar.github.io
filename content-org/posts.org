@@ -1,0 +1,14 @@
+#+hugo_base_dir: ../
+#+hugo_front_matter_format: yaml
+#+hugo_auto_set_lastmod: t
+
+* Posts
+** TODO `gtags` for code navigation :gtags:cscope:vim:emacs:@editor:
+:PROPERTIES:
+:EXPORT_FILE_NAME: gtags-for-code-navigation
+:EXPORT_AUTHOR: Dhananjay
+:EXPORT_DATE: <2021-06-25 Fri>
+:EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:EXPORT_HUGO_WEIGHT: auto
+:END:
+*** Intro

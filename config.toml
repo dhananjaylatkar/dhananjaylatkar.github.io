@@ -1,0 +1,48 @@
+baseURL= "https://dhananjaylatkar.github.io/"
+languageCode= "en-us"
+title= "Dhananjay's Blog"
+theme= "cactus"
+copyright = "Dhananjay"
+# Main menu which appears below site header.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
+
+# [[menu.main]]
+# name = "About"
+# url = "/about"
+# weight = 4
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+[params]
+  description = "Hello there 👋."
+  mainSection = "posts"
+  mainSectionTitle = "Posts"
+  showAllPostsOnHomePage = false
+  postsOnHomePage = 10
+  rss = true
+  # tagsOverview = true
+  show_updated = true
+  showReadTime = true
+  [[params.social]]
+    name = "github"
+    link = "https://github.com/dhananjaylatkar"
+  [[params.social]]
+    name = "discord"
+    link = "https://www.linkedin.com/"
