@@ -43,3 +43,5 @@ weight = 4
   [[params.social]]
     name = "github"
     link = "https://github.com/dhananjaylatkar"
+
+googleAnalytics = "UA-200656436-1"
