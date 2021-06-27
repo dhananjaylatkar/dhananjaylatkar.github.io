@@ -3,6 +3,8 @@ languageCode= "en-us"
 title= "Dhananjay's Blog"
 theme= "cactus"
 copyright = "Dhananjay"
+googleAnalytics = "UA-200656436-1"
+
 # Main menu which appears below site header.
 [[menu.main]]
 name = "Home"
@@ -44,4 +46,3 @@ weight = 4
     name = "github"
     link = "https://github.com/dhananjaylatkar"
 
-googleAnalytics = "UA-200656436-1"
