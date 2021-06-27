@@ -19,10 +19,10 @@ name = "Tags"
 url = "/tags"
 weight = 3
 
-# [[menu.main]]
-# name = "About"
-# url = "/about"
-# weight = 4
+[[menu.main]]
+name = "Categories"
+url = "/categories"
+weight = 4
 
 [markup]
   [markup.tableOfContents]
@@ -43,6 +43,3 @@ weight = 3
   [[params.social]]
     name = "github"
     link = "https://github.com/dhananjaylatkar"
-  [[params.social]]
-    name = "discord"
-    link = "https://www.linkedin.com/"
