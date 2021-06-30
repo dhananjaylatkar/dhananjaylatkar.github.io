@@ -2,7 +2,7 @@
 #+hugo_front_matter_format: yaml
 
 * Posts
-** DONE `gtags` for code navigation :gtags:cscope:vim:neovim:@editor:
+** DONE Using gtags for code navigation :gtags:cscope:vim:neovim:@editor:
 CLOSED: [2021-06-27 Sun 15:45]
 :PROPERTIES:
 :EXPORT_FILE_NAME: gtags-for-code-navigation
@@ -126,16 +126,74 @@ If you don't need to support ~sh~
 for ((;;)) { date ; sleep 5 ; }
 #+end_src
 
+** DONE xargs linux command :xargs:cli:utility:tutorial:@linux:
+CLOSED: [2021-06-30 Wed 23:13]
+:PROPERTIES:
+:EXPORT_FILE_NAME: xargs-linux-command
+:EXPORT_HUGO_WEIGHT: auto
+:END:
+The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
+
+*** Why xargs?
+Some commands like ~grep~ can accept input from ~stdin~, but others can't, this is place where xargs came into picture.
+
+In layman's terms, output of one command can be transfed to another command as a arguments. Piping outputs to some programs work (like ~grep~, ~awk~, ~sort~, ~uniq~, etc) but, it doesn't work always (e.g. ~kill~, ~mkdir~, ~touch~, etc).
+
+*** Examples
+Examples are always a best way to learn about CLI programs. Let's dive into it.
+
+**** Simple use case
+Make folder using output from other command. If nothing is given it'll pass input to ~echo~.
+#+begin_src shell
+$ echo "my-direcory" | xargs mkdir
+#+end_src
+
+**** -t switch
+- ~-t~ switch will show what ~xargs~ is doing.
+#+begin_src shell
+$ echo "my-directory-1 my-directory-2" | xargs -t mkdir
+mkdir my-directory-1 my-directory-2
+#+end_src
+
+- Pass outputs one by one.
+#+begin_src shell
+$ echo "my-directory-1 my-directory-2" | xargs -t -n 1 mkdir
+mkdir my-directory-1
+mkdir my-directory-2
+#+end_src
+
+**** -0 switch
+If input items are terminated by null character instead of white spaces.
+#+begin_src shell
+$ echo "file1\0file2\0" | xargs -0 touch
+#+end_src
+
+**** Manupulate input before passing to program
+~-I~ can be used to do this.
+Let's say you want to bulk rename all files in a folder.
+#+begin_src shell
+$ ls | xargs -I @@ mv @@ @@.sh
+#+end_src
+
+~@@~ used in above example is just a variable, you can use any other symbols.
+
+**** Wait before executing next command
+~-P~ allows to do this. You can specify number of parellel executions.
+
+Below command executes ~echo~ on each ~1,2,3,4~ one by one with 1 sec sleep in between.
+Number after ~-P~ is used to specify number of parallel executions.
+#+begin_src shell
+$ echo "1 2 3 4" | xargs -n 1 -P 1 bash -c 'sleep 1; echo $0'
+#+end_src
+
+Let's say, you want to execute 2 commands simultaneity and wait 1 sec before next 2.
+#+begin_src shell
+$ echo "1 2 3 4" | xargs -n 1 -P 2 bash -c 'sleep 1; echo $0'
+#+end_src
+
 ** TODO `neovim` config in `lua` :neovim:lua:init_lua:@editor:
 :PROPERTIES:
 :EXPORT_FILE_NAME: neovim-lua-config
 :EXPORT_HUGO_WEIGHT: auto
 :END:
-** TODO xargs tutorial :xargs:cli:utility:@linux:
-:PROPERTIES:
-:EXPORT_FILE_NAME: xargs-brief-intro
-:EXPORT_HUGO_WEIGHT: auto
-:END:
-The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
-
 ** TODO awk

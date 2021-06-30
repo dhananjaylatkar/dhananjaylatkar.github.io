@@ -33,7 +33,7 @@ weight = 4
     startLevel = 2
 
 [params]
-  description = "Hello there 👋."
+  description = "Hello there 👋. \n\nThis blog is a collection of articles that will help others (including future me 🙃). All the posts are a compilation of things I read on the internet, man pages and Docs."
   mainSection = "posts"
   mainSectionTitle = "Posts"
   showAllPostsOnHomePage = false

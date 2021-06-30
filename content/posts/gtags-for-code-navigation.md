@@ -1,5 +1,5 @@
 ---
-title: "`gtags` for code navigation"
+title: "Using gtags for code navigation"
 author: ["Dhananjay"]
 date: 2021-06-27T15:45:00+05:30
 tags: ["gtags", "cscope", "vim", "neovim"]
@@ -134,6 +134,6 @@ Code navigation in `cURL` source code.
 
 Pressing `<leader>cg` on `Curl_convert_to_network` symbol opens a quickfix window with links to defination.
 
-<a id="orgdf9ff43"></a>
+<a id="orgef435e6"></a>
 
 {{< figure src="/images/gtags-curl.png" caption="Figure 1: cURL source code navigation" >}}
