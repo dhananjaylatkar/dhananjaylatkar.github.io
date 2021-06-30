@@ -106,8 +106,36 @@ Pressing ~<leader>cg~ on ~Curl_convert_to_network~ symbol opens a quickfix windo
 #+NAME: fig:gtags-curl
 [[../static/images/gtags-curl.png]]
 
+** DONE shell one-liner for infinite loop :shell:sh:bash:zsh:loop:utility:@linux:
+CLOSED: [2021-06-30 Wed 13:33]
+:PROPERTIES:
+:EXPORT_FILE_NAME: shell-infinite-loop
+:EXPORT_HUGO_WEIGHT: auto
+:END:
+This is for a quick reference (copy-pasta).
+
+*** While loop
+This is compatible with all POSIX complient shells.
+#+begin_src shell
+while true; do date; sleep 5; done
+#+end_src
+
+*** For loop
+If you don't need to support ~sh~
+#+begin_src shell
+for ((;;)) { date ; sleep 5 ; }
+#+end_src
+
 ** TODO `neovim` config in `lua` :neovim:lua:init_lua:@editor:
 :PROPERTIES:
 :EXPORT_FILE_NAME: neovim-lua-config
 :EXPORT_HUGO_WEIGHT: auto
 :END:
+** TODO xargs tutorial :xargs:cli:utility:@linux:
+:PROPERTIES:
+:EXPORT_FILE_NAME: xargs-brief-intro
+:EXPORT_HUGO_WEIGHT: auto
+:END:
+The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
+
+** TODO awk
