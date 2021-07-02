@@ -36,11 +36,12 @@ weight = 4
   description = "Hello there 👋. \n\nThis blog is a collection of articles that will help others (including future me 🙃). All the posts are a compilation of things I read on the internet, man pages and Docs."
   mainSection = "posts"
   mainSectionTitle = "Posts"
-  showAllPostsOnHomePage = false
+  showAllPostsOnHomePage = true
   postsOnHomePage = 10
+  colortheme = "white" # dark, light, white, or classic
   rss = true
   # tagsOverview = true
-  show_updated = true
+  # show_updated = true
   showReadTime = true
   [[params.social]]
     name = "github"
