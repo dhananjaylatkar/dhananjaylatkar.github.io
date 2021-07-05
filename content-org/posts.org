@@ -49,7 +49,7 @@ There are lots of ways to use ~gtags~. I prefer to use it in ~neovim~. Same inst
 We'll be using plugins to set-up auto tag generation for a project. These plugins re-generate DB when files in project are changed.
 Thanks to the incremental update support by ~gatgs~ re-generation takes only few seconds.
 - My setup for this tutorial:
-    - ~neovim~ v0.5 (nightly)
+    - ~neovim~ v0.5
     - Plugin manger - [[https://github.com/wbthomason/packer.nvim][packer.nvim]]
 
 **** Plugin installation
@@ -168,7 +168,7 @@ If input items are terminated by null character instead of white spaces.
 $ echo "file1\0file2\0" | xargs -0 touch
 #+end_src
 
-**** Manupulate input before passing to program
+**** Manipulate input before passing to program
 ~-I~ can be used to do this.
 Let's say you want to bulk rename all files in a folder.
 #+begin_src shell
@@ -191,9 +191,10 @@ Let's say, you want to execute 2 commands simultaneity and wait 1 sec before nex
 $ echo "1 2 3 4" | xargs -n 1 -P 2 bash -c 'sleep 1; echo $0'
 #+end_src
 
-** TODO `neovim` config in `lua` :neovim:lua:init_lua:@editor:
+** TODO neovim config in lua (a.k.a. init.lua) :neovim:lua:init_lua:@editor:
 :PROPERTIES:
 :EXPORT_FILE_NAME: neovim-lua-config
 :EXPORT_HUGO_WEIGHT: auto
 :END:
 ** TODO awk
+** TODO find command in linux

@@ -63,7 +63,7 @@ $ echo "file1\0file2\0" | xargs -0 touch
 ```
 
 
-### Manupulate input before passing to program {#manupulate-input-before-passing-to-program}
+### Manipulate input before passing to program {#manipulate-input-before-passing-to-program}
 
 `-I` can be used to do this.
 Let's say you want to bulk rename all files in a folder.

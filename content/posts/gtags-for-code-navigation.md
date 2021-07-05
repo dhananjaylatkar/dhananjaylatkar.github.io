@@ -70,7 +70,7 @@ We'll be using plugins to set-up auto tag generation for a project. These plugin
 Thanks to the incremental update support by `gatgs` re-generation takes only few seconds.
 
 -   My setup for this tutorial:
-    -   `neovim` v0.5 (nightly)
+    -   `neovim` v0.5
     -   Plugin manger - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 
@@ -134,6 +134,6 @@ Code navigation in `cURL` source code.
 
 Pressing `<leader>cg` on `Curl_convert_to_network` symbol opens a quickfix window with links to defination.
 
-<a id="orgef435e6"></a>
+<a id="orga19aaad"></a>
 
 {{< figure src="/images/gtags-curl.png" caption="Figure 1: cURL source code navigation" >}}
