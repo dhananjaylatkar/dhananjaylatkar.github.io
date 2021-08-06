@@ -6,7 +6,7 @@
 <link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title> Adding static IPv4 in Freebsd | Dhananjay's Blog</title>
+<title> Adding static IPv4 in FreeBSD | Dhananjay's Blog</title>
 <link rel=canonical href=https://dhananjaylatkar.github.io/posts/add-freebsd-ipv4/>
 <meta name=description content="Hello there 👋. 
 
@@ -14,8 +14,8 @@ This blog is a collection of articles that will help others (including future me
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="all,follow">
 <meta name=googlebot content="index,follow,snippet,archive">
-<meta property="og:title" content="Adding static IPv4 in Freebsd">
-<meta property="og:description" content="This is quick how-to guide on adding to FreeBSD machine.
+<meta property="og:title" content="Adding static IPv4 in FreeBSD">
+<meta property="og:description" content="This is a quick how-to guide on adding to FreeBSD machine.
 Set permanent IP  Open /etc/rc.conf  vi /etc/rc.conf  Search for ifconfig_xn0 (xn0 is interface name) and edit its contents to reflect your IP.  hostname=&#34;freebsd&#34; ifconfig_xn0=&#34;inet 192.168.10.1 netmask 255.255.250.0&#34;  Run the /etc/netstart script to update configuration.  ./etc/netstart Set temporary IP NOTE: IP will be reverted after reboot.
  Get the interface name using ifconfig -a (you don&rsquo;t want lo interface)  $ ifconfig -a lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384 .">
 <meta property="og:type" content="article">
@@ -23,8 +23,8 @@ Set permanent IP  Open /etc/rc.conf  vi /etc/rc.conf  Search for ifconfig_xn0 (x
 <meta property="article:published_time" content="2021-08-06T14:02:00+05:30">
 <meta property="article:modified_time" content="2021-08-06T14:02:00+05:30">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Adding static IPv4 in Freebsd">
-<meta name=twitter:description content="This is quick how-to guide on adding to FreeBSD machine.
+<meta name=twitter:title content="Adding static IPv4 in FreeBSD">
+<meta name=twitter:description content="This is a quick how-to guide on adding to FreeBSD machine.
 Set permanent IP  Open /etc/rc.conf  vi /etc/rc.conf  Search for ifconfig_xn0 (xn0 is interface name) and edit its contents to reflect your IP.  hostname=&#34;freebsd&#34; ifconfig_xn0=&#34;inet 192.168.10.1 netmask 255.255.250.0&#34;  Run the /etc/netstart script to update configuration.  ./etc/netstart Set temporary IP NOTE: IP will be reverted after reboot.
  Get the interface name using ifconfig -a (you don&rsquo;t want lo interface)  $ ifconfig -a lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384 .">
 <link rel=stylesheet href=https://dhananjaylatkar.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
@@ -80,42 +80,42 @@ Set permanent IP  Open /etc/rc.conf  vi /etc/rc.conf  Search for ifconfig_xn0 (x
 </a>
 </li>
 <li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&text=Adding%20static%20IPv4%20in%20Freebsd" aria-label=Twitter>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&text=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=Twitter>
 <i class="fab fa-twitter" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20Freebsd" aria-label=Linkedin>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=Linkedin>
 <i class="fab fa-linkedin" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&is_video=false&description=Adding%20static%20IPv4%20in%20Freebsd" aria-label=Pinterest>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&is_video=false&description=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=Pinterest>
 <i class="fab fa-pinterest" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="mailto:?subject=Adding%20static%20IPv4%20in%20Freebsd&body=Check out this article: https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f" aria-label=Email>
+<a class=icon href="mailto:?subject=Adding%20static%20IPv4%20in%20FreeBSD&body=Check out this article: https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f" aria-label=Email>
 <i class="fas fa-envelope" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20Freebsd" aria-label=Pocket>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=Pocket>
 <i class="fab fa-get-pocket" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20Freebsd" aria-label=reddit>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=reddit>
 <i class="fab fa-reddit" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&name=Adding%20static%20IPv4%20in%20Freebsd&description=This%20is%20quick%20how-to%20guide%20on%20adding%20to%20FreeBSD%20machine.%0aSet%20permanent%20IP%20%20Open%20%2fetc%2frc.conf%20%20vi%20%2fetc%2frc.conf%20%20Search%20for%20ifconfig_xn0%20%28xn0%20is%20interface%20name%29%20and%20edit%20its%20contents%20to%20reflect%20your%20IP.%20%20hostname%3d%26%2334%3bfreebsd%26%2334%3b%20ifconfig_xn0%3d%26%2334%3binet%20192.168.10.1%20netmask%20255.255.250.0%26%2334%3b%20%20Run%20the%20%2fetc%2fnetstart%20script%20to%20update%20configuration.%20%20.%2fetc%2fnetstart%20Set%20temporary%20IP%20NOTE%3a%20IP%20will%20be%20reverted%20after%20reboot.%0a%20Get%20the%20interface%20name%20using%20ifconfig%20-a%20%28you%20don%26rsquo%3bt%20want%20lo%20interface%29%20%20%24%20ifconfig%20-a%20lo0%3a%20flags%3d8049%26lt%3bUP%2cLOOPBACK%2cRUNNING%2cMULTICAST%26gt%3b%20metric%200%20mtu%2016384%20." aria-label=Tumblr>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&name=Adding%20static%20IPv4%20in%20FreeBSD&description=This%20is%20a%20quick%20how-to%20guide%20on%20adding%20to%20FreeBSD%20machine.%0aSet%20permanent%20IP%20%20Open%20%2fetc%2frc.conf%20%20vi%20%2fetc%2frc.conf%20%20Search%20for%20ifconfig_xn0%20%28xn0%20is%20interface%20name%29%20and%20edit%20its%20contents%20to%20reflect%20your%20IP.%20%20hostname%3d%26%2334%3bfreebsd%26%2334%3b%20ifconfig_xn0%3d%26%2334%3binet%20192.168.10.1%20netmask%20255.255.250.0%26%2334%3b%20%20Run%20the%20%2fetc%2fnetstart%20script%20to%20update%20configuration.%20%20.%2fetc%2fnetstart%20Set%20temporary%20IP%20NOTE%3a%20IP%20will%20be%20reverted%20after%20reboot.%0a%20Get%20the%20interface%20name%20using%20ifconfig%20-a%20%28you%20don%26rsquo%3bt%20want%20lo%20interface%29%20%20%24%20ifconfig%20-a%20lo0%3a%20flags%3d8049%26lt%3bUP%2cLOOPBACK%2cRUNNING%2cMULTICAST%26gt%3b%20metric%200%20mtu%2016384%20." aria-label=Tumblr>
 <i class="fab fa-tumblr" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&t=Adding%20static%20IPv4%20in%20Freebsd" aria-label="Hacker News">
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&t=Adding%20static%20IPv4%20in%20FreeBSD" aria-label="Hacker News">
 <i class="fab fa-hacker-news" aria-hidden=true></i>
 </a>
 </li>
@@ -134,7 +134,7 @@ Set permanent IP  Open /etc/rc.conf  vi /etc/rc.conf  Search for ifconfig_xn0 (x
 <article class=post itemscope itemtype=http://schema.org/BlogPosting>
 <header>
 <h1 class=posttitle itemprop="name headline">
-Adding static IPv4 in Freebsd
+Adding static IPv4 in FreeBSD
 </h1>
 <div class=meta>
 <div class=postdate>
@@ -159,7 +159,7 @@ Adding static IPv4 in Freebsd
 </div>
 </header>
 <div class=content itemprop=articleBody>
-<p>This is quick how-to guide on adding to FreeBSD machine.</p>
+<p>This is a quick how-to guide on adding to FreeBSD machine.</p>
 <h2 id=set-permanent-ip>Set permanent IP</h2>
 <ul>
 <li>Open <code>/etc/rc.conf</code></li>
@@ -217,42 +217,42 @@ xn0: flags<span style=color:#f92672>=</span>8843&lt;UP,BROADCAST,RUNNING,SIMPLEX
 </a>
 </li>
 <li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&text=Adding%20static%20IPv4%20in%20Freebsd" aria-label=Twitter>
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&text=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=Twitter>
 <i class="fab fa-twitter fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20Freebsd" aria-label=Linkedin>
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=Linkedin>
 <i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&is_video=false&description=Adding%20static%20IPv4%20in%20Freebsd" aria-label=Pinterest>
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&is_video=false&description=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=Pinterest>
 <i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="mailto:?subject=Adding%20static%20IPv4%20in%20Freebsd&body=Check out this article: https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f" aria-label=Email>
+<a class=icon href="mailto:?subject=Adding%20static%20IPv4%20in%20FreeBSD&body=Check out this article: https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f" aria-label=Email>
 <i class="fas fa-envelope fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20Freebsd" aria-label=Pocket>
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=Pocket>
 <i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20Freebsd" aria-label=reddit>
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&title=Adding%20static%20IPv4%20in%20FreeBSD" aria-label=reddit>
 <i class="fab fa-reddit fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&name=Adding%20static%20IPv4%20in%20Freebsd&description=This%20is%20quick%20how-to%20guide%20on%20adding%20to%20FreeBSD%20machine.%0aSet%20permanent%20IP%20%20Open%20%2fetc%2frc.conf%20%20vi%20%2fetc%2frc.conf%20%20Search%20for%20ifconfig_xn0%20%28xn0%20is%20interface%20name%29%20and%20edit%20its%20contents%20to%20reflect%20your%20IP.%20%20hostname%3d%26%2334%3bfreebsd%26%2334%3b%20ifconfig_xn0%3d%26%2334%3binet%20192.168.10.1%20netmask%20255.255.250.0%26%2334%3b%20%20Run%20the%20%2fetc%2fnetstart%20script%20to%20update%20configuration.%20%20.%2fetc%2fnetstart%20Set%20temporary%20IP%20NOTE%3a%20IP%20will%20be%20reverted%20after%20reboot.%0a%20Get%20the%20interface%20name%20using%20ifconfig%20-a%20%28you%20don%26rsquo%3bt%20want%20lo%20interface%29%20%20%24%20ifconfig%20-a%20lo0%3a%20flags%3d8049%26lt%3bUP%2cLOOPBACK%2cRUNNING%2cMULTICAST%26gt%3b%20metric%200%20mtu%2016384%20." aria-label=Tumblr>
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&name=Adding%20static%20IPv4%20in%20FreeBSD&description=This%20is%20a%20quick%20how-to%20guide%20on%20adding%20to%20FreeBSD%20machine.%0aSet%20permanent%20IP%20%20Open%20%2fetc%2frc.conf%20%20vi%20%2fetc%2frc.conf%20%20Search%20for%20ifconfig_xn0%20%28xn0%20is%20interface%20name%29%20and%20edit%20its%20contents%20to%20reflect%20your%20IP.%20%20hostname%3d%26%2334%3bfreebsd%26%2334%3b%20ifconfig_xn0%3d%26%2334%3binet%20192.168.10.1%20netmask%20255.255.250.0%26%2334%3b%20%20Run%20the%20%2fetc%2fnetstart%20script%20to%20update%20configuration.%20%20.%2fetc%2fnetstart%20Set%20temporary%20IP%20NOTE%3a%20IP%20will%20be%20reverted%20after%20reboot.%0a%20Get%20the%20interface%20name%20using%20ifconfig%20-a%20%28you%20don%26rsquo%3bt%20want%20lo%20interface%29%20%20%24%20ifconfig%20-a%20lo0%3a%20flags%3d8049%26lt%3bUP%2cLOOPBACK%2cRUNNING%2cMULTICAST%26gt%3b%20metric%200%20mtu%2016384%20." aria-label=Tumblr>
 <i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&t=Adding%20static%20IPv4%20in%20Freebsd" aria-label="Hacker News">
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fadd-freebsd-ipv4%2f&t=Adding%20static%20IPv4%20in%20FreeBSD" aria-label="Hacker News">
 <i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
 </a>
 </li>
