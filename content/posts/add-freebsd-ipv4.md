@@ -1,5 +1,5 @@
 ---
-title: "Adding static IPv4 in Freebsd"
+title: "Adding static IPv4 in FreeBSD"
 author: ["Dhananjay"]
 date: 2021-08-06T14:02:00+05:30
 tags: ["freebsd", "ip", "ipv4", "how-to", "networking"]
@@ -7,7 +7,7 @@ draft: false
 weight: 2006
 ---
 
-This is quick how-to guide on adding to FreeBSD machine.
+This is a quick how-to guide on adding to FreeBSD machine.
 
 
 ## Set permanent IP {#set-permanent-ip}

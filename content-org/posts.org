@@ -384,13 +384,13 @@ Print all PIDs owned by your user.
 :END:
 ** TODO find command in linux
 ** TODO git completly deleting file from history
-** DONE Adding static IPv4 in Freebsd :freebsd:ip:ipv4:how_to:networking:
+** DONE Adding static IPv4 in FreeBSD :freebsd:ip:ipv4:how_to:networking:
 CLOSED: [2021-08-06 Fri 14:02]
 :PROPERTIES:
 :EXPORT_FILE_NAME: add-freebsd-ipv4
 :EXPORT_HUGO_WEIGHT: auto
 :END:
-This is quick how-to guide on adding to FreeBSD machine.
+This is a quick how-to guide on adding to FreeBSD machine.
 
 *** Set permanent IP
 + Open ~/etc/rc.conf~
