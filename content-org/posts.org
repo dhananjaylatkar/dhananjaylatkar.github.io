@@ -383,3 +383,44 @@ Print all PIDs owned by your user.
 :EXPORT_HUGO_WEIGHT: auto
 :END:
 ** TODO find command in linux
+** TODO git completly deleting file from history
+** DONE Adding static IPv4 in Freebsd :freebsd:ip:ipv4:how_to:networking:
+CLOSED: [2021-08-06 Fri 14:02]
+:PROPERTIES:
+:EXPORT_FILE_NAME: add-freebsd-ipv4
+:EXPORT_HUGO_WEIGHT: auto
+:END:
+This is quick how-to guide on adding to FreeBSD machine.
+
+*** Set permanent IP
++ Open ~/etc/rc.conf~
+#+begin_src shell
+vi /etc/rc.conf
+#+end_src
++ Search for ~ifconfig_xn0~ (~xn0~ is interface name) and edit its contents to reflect your IP.
+#+begin_src shell
+hostname="freebsd"
+ifconfig_xn0="inet 192.168.10.1 netmask 255.255.250.0"
+#+end_src
++ Run the ~/etc/netstart~ script to update configuration.
+#+begin_src shell
+./etc/netstart
+#+end_src
+
+*** Set temporary IP
+NOTE: IP will be reverted after reboot.
+
++ Get the interface name using ~ifconfig -a~ (you don't want ~lo~ interface)
+#+begin_src shell
+$ ifconfig -a
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
+     ...
+xn0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+     ...
+#+end_src
+
++ Set the ip for ~xn0~ using following command.
+#+begin_src shell
+$ ifconfig xn0 inet 192.168.10.1
+#+end_src
+
