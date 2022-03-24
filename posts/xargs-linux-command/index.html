@@ -1,324 +1,40 @@
-<!doctype html><html lang=en-us>
-<head>
-<link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<title> xargs linux command | Dhananjay's Blog</title>
-<link rel=canonical href=https://dhananjaylatkar.github.io/posts/xargs-linux-command/>
-<meta name=description content="Hello there 👋. 
+<!doctype html><html lang=en-us><head><link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>xargs linux command | Dhananjay's Blog</title><link rel=canonical href=https://dhananjaylatkar.github.io/posts/xargs-linux-command/><meta name=description content="Hello there 👋. 
 
-This blog is a collection of articles that will help others (including future me 🙃). All the posts are a compilation of things I read on the internet, man pages and Docs.">
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="all,follow">
-<meta name=googlebot content="index,follow,snippet,archive">
-<meta property="og:title" content="xargs linux command">
-<meta property="og:description" content="The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
+This blog is a collection of articles that will help others (including future me 🙃). All the posts are a compilation of things I read on the internet, man pages and Docs."><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:title" content="xargs linux command"><meta property="og:description" content="The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
 Why xargs? Some commands like grep can accept input from stdin, but others can&rsquo;t, this is place where xargs came into picture.
-In layman&rsquo;s terms, output of one command can be transfed to another command as a arguments. Piping outputs to some programs work (like grep, awk, sort, uniq, etc) but, it doesn&rsquo;t work always (e.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://dhananjaylatkar.github.io/posts/xargs-linux-command/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-06-30T23:13:00+05:30">
-<meta property="article:modified_time" content="2021-06-30T23:13:00+05:30">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="xargs linux command">
-<meta name=twitter:description content="The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
+In layman&rsquo;s terms, output of one command can be transfed to another command as a arguments. Piping outputs to some programs work (like grep, awk, sort, uniq, etc) but, it doesn&rsquo;t work always (e."><meta property="og:type" content="article"><meta property="og:url" content="https://dhananjaylatkar.github.io/posts/xargs-linux-command/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-06-30T23:13:00+05:30"><meta property="article:modified_time" content="2021-06-30T23:13:00+05:30"><meta name=twitter:card content="summary"><meta name=twitter:title content="xargs linux command"><meta name=twitter:description content="The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.
 Why xargs? Some commands like grep can accept input from stdin, but others can&rsquo;t, this is place where xargs came into picture.
-In layman&rsquo;s terms, output of one command can be transfed to another command as a arguments. Piping outputs to some programs work (like grep, awk, sort, uniq, etc) but, it doesn&rsquo;t work always (e.">
-<link rel=stylesheet href=https://dhananjaylatkar.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
-<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
-<link rel=icon type=image/png href=https://dhananjaylatkar.github.io/images/favicon.ico>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-200656436-1','auto'),ga('send','pageview'))</script>
-</head>
-<body class="max-width mx-auto px3 ltr">
-<div class="content index py4">
-<div id=header-post>
-<a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+In layman&rsquo;s terms, output of one command can be transfed to another command as a arguments. Piping outputs to some programs work (like grep, awk, sort, uniq, etc) but, it doesn&rsquo;t work always (e."><link rel=stylesheet href=https://dhananjaylatkar.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://dhananjaylatkar.github.io/images/favicon.ico><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-200656436-1","auto"),ga("send","pageview"))</script></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
 <a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
-<a id=top-icon-tablet href=# onclick="$('html, body').animate({scrollTop:0},'fast')" style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-<span id=menu>
-<span id=nav>
-<ul>
-<li><a href=/>Home</a></li>
-<li><a href=/posts>All posts</a></li>
-<li><a href=/tags>Tags</a></li>
-<li><a href=/categories>Categories</a></li>
-</ul>
-</span>
-<br>
-<span id=actions>
-<ul>
-<li>
-<a class=icon href=https://dhananjaylatkar.github.io/posts/awk-linux-command/ aria-label=Previous>
-<i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=https://dhananjaylatkar.github.io/posts/shell-infinite-loop/ aria-label=Next>
-<i class="fas fa-chevron-right" aria-hidden=true onmouseover="$('#i-next').toggle()" onmouseout="$('#i-next').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up" aria-hidden=true onmouseover="$('#i-top').toggle()" onmouseout="$('#i-top').toggle()"></i>
-</a>
-</li>
-<li>
-<a class=icon href=# aria-label=Share>
-<i class="fas fa-share-alt" aria-hidden=true onmouseover="$('#i-share').toggle()" onmouseout="$('#i-share').toggle()" onclick="return $('#share').toggle(),!1"></i>
-</a>
-</li>
-</ul>
-<span id=i-prev class=info style=display:none>Previous post</span>
+<a id=top-icon-tablet href=# onclick='$("html, body").animate({scrollTop:0},"fast")' style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu><span id=nav><ul><li><a href=/>Home</a></li><li><a href=/posts>All posts</a></li><li><a href=/tags>Tags</a></li><li><a href=/categories>Categories</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://dhananjaylatkar.github.io/posts/awk-linux-command/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover='$("#i-prev").toggle()' onmouseout='$("#i-prev").toggle()'></i></a></li><li><a class=icon href=https://dhananjaylatkar.github.io/posts/shell-infinite-loop/ aria-label=Next><i class="fas fa-chevron-right" aria-hidden=true onmouseover='$("#i-next").toggle()' onmouseout='$("#i-next").toggle()'></i></a></li><li><a class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover='$("#i-top").toggle()' onmouseout='$("#i-top").toggle()'></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover='$("#i-share").toggle()' onmouseout='$("#i-share").toggle()' onclick='return $("#share").toggle(),!1'></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
 <span id=i-next class=info style=display:none>Next post</span>
 <span id=i-top class=info style=display:none>Back to top</span>
-<span id=i-share class=info style=display:none>Share post</span>
-</span>
-<br>
-<div id=share style=display:none>
-<ul>
-<li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f" aria-label=Facebook>
-<i class="fab fa-facebook" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&text=xargs%20linux%20command" aria-label=Twitter>
-<i class="fab fa-twitter" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=Linkedin>
-<i class="fab fa-linkedin" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&is_video=false&description=xargs%20linux%20command" aria-label=Pinterest>
-<i class="fab fa-pinterest" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=xargs%20linux%20command&body=Check out this article: https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f" aria-label=Email>
-<i class="fas fa-envelope" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=Pocket>
-<i class="fab fa-get-pocket" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=reddit>
-<i class="fab fa-reddit" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&name=xargs%20linux%20command&description=The%20xargs%20utility%20reads%20space%2c%20tab%2c%20newline%20and%20end-of-file%20delimited%20strings%20from%20the%20standard%20input%20and%20executes%20utility%20with%20the%20strings%20as%20arguments.%0aWhy%20xargs%3f%20Some%20commands%20like%20grep%20can%20accept%20input%20from%20stdin%2c%20but%20others%20can%26rsquo%3bt%2c%20this%20is%20place%20where%20xargs%20came%20into%20picture.%0aIn%20layman%26rsquo%3bs%20terms%2c%20output%20of%20one%20command%20can%20be%20transfed%20to%20another%20command%20as%20a%20arguments.%20Piping%20outputs%20to%20some%20programs%20work%20%28like%20grep%2c%20awk%2c%20sort%2c%20uniq%2c%20etc%29%20but%2c%20it%20doesn%26rsquo%3bt%20work%20always%20%28e." aria-label=Tumblr>
-<i class="fab fa-tumblr" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&t=xargs%20linux%20command" aria-label="Hacker News">
-<i class="fab fa-hacker-news" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=toc>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#why-xargs>Why xargs?</a></li>
-<li><a href=#examples>Examples</a>
-<ul>
-<li><a href=#simple-use-case>Simple use case</a></li>
-<li><a href=#t-switch>-t switch</a></li>
-<li><a href=#0-switch>-0 switch</a></li>
-<li><a href=#manipulate-input-before-passing-to-program>Manipulate input before passing to program</a></li>
-<li><a href=#wait-before-executing-next-command>Wait before executing next command</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</span>
-</div>
-<article class=post itemscope itemtype=http://schema.org/BlogPosting>
-<header>
-<h1 class=posttitle itemprop="name headline">
-xargs linux command
-</h1>
-<div class=meta>
-<div class=postdate>
-<time datetime="2021-06-30 23:13:00 +0530 +0530" itemprop=datePublished>2021-06-30</time>
-</div>
-<div class=article-read-time>
-<i class="far fa-clock"></i>
-2 minute read
-</div>
-<div class=article-category>
-<i class="fas fa-archive"></i>
-<a class=category-link href=/categories/linux>linux</a>
-</div>
-<div class=article-tag>
-<i class="fas fa-tag"></i>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f" aria-label=Facebook><i class="fab fa-facebook" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&text=xargs%20linux%20command" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&is_video=false&description=xargs%20linux%20command" aria-label=Pinterest><i class="fab fa-pinterest" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=xargs%20linux%20command&body=Check out this article: https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&name=xargs%20linux%20command&description=The%20xargs%20utility%20reads%20space%2c%20tab%2c%20newline%20and%20end-of-file%20delimited%20strings%20from%20the%20standard%20input%20and%20executes%20utility%20with%20the%20strings%20as%20arguments.%0aWhy%20xargs%3f%20Some%20commands%20like%20grep%20can%20accept%20input%20from%20stdin%2c%20but%20others%20can%26rsquo%3bt%2c%20this%20is%20place%20where%20xargs%20came%20into%20picture.%0aIn%20layman%26rsquo%3bs%20terms%2c%20output%20of%20one%20command%20can%20be%20transfed%20to%20another%20command%20as%20a%20arguments.%20Piping%20outputs%20to%20some%20programs%20work%20%28like%20grep%2c%20awk%2c%20sort%2c%20uniq%2c%20etc%29%20but%2c%20it%20doesn%26rsquo%3bt%20work%20always%20%28e." aria-label=Tumblr><i class="fab fa-tumblr" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&t=xargs%20linux%20command" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents><ul><li><a href=#why-xargs>Why xargs?</a></li><li><a href=#examples>Examples</a><ul><li><a href=#simple-use-case>Simple use case</a></li><li><a href=#t-switch>-t switch</a></li><li><a href=#0-switch>-0 switch</a></li><li><a href=#manipulate-input-before-passing-to-program>Manipulate input before passing to program</a></li><li><a href=#wait-before-executing-next-command>Wait before executing next command</a></li></ul></li></ul></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">xargs linux command</h1><div class=meta><div class=postdate><time datetime="2021-06-30 23:13:00 +0530 +0530" itemprop=datePublished>2021-06-30</time></div><div class=article-read-time><i class="far fa-clock"></i>
+2 minute read</div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=/categories/linux>linux</a></div><div class=article-tag><i class="fas fa-tag"></i>
 <a class=tag-link href=/tags/xargs rel=tag>xargs</a>
 ,
 <a class=tag-link href=/tags/cli rel=tag>cli</a>
 ,
 <a class=tag-link href=/tags/utility rel=tag>utility</a>
 ,
-<a class=tag-link href=/tags/tutorial rel=tag>tutorial</a>
-</div>
-</div>
-</header>
-<div class=content itemprop=articleBody>
-<p>The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.</p>
-<h2 id=why-xargs>Why xargs?</h2>
-<p>Some commands like <code>grep</code> can accept input from <code>stdin</code>, but others can&rsquo;t, this is place where xargs came into picture.</p>
-<p>In layman&rsquo;s terms, output of one command can be transfed to another command as a arguments. Piping outputs to some programs work (like <code>grep</code>, <code>awk</code>, <code>sort</code>, <code>uniq</code>, etc) but, it doesn&rsquo;t work always (e.g. <code>kill</code>, <code>mkdir</code>, <code>touch</code>, etc).</p>
-<h2 id=examples>Examples</h2>
-<p>Examples are always a best way to learn about CLI programs. Let&rsquo;s dive into it.</p>
-<h3 id=simple-use-case>Simple use case</h3>
-<p>Make folder using output from other command. If nothing is given it&rsquo;ll pass input to <code>echo</code>.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ echo <span style=color:#e6db74>&#34;my-direcory&#34;</span> | xargs mkdir
-</code></pre></div><h3 id=t-switch>-t switch</h3>
-<ul>
-<li><code>-t</code> switch will show what <code>xargs</code> is doing.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ echo <span style=color:#e6db74>&#34;my-directory-1 my-directory-2&#34;</span> | xargs -t mkdir
-mkdir my-directory-1 my-directory-2
-</code></pre></div><ul>
-<li>Pass outputs one by one.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ echo <span style=color:#e6db74>&#34;my-directory-1 my-directory-2&#34;</span> | xargs -t -n <span style=color:#ae81ff>1</span> mkdir
-mkdir my-directory-1
-mkdir my-directory-2
-</code></pre></div><h3 id=0-switch>-0 switch</h3>
-<p>If input items are terminated by null character instead of white spaces.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ echo <span style=color:#e6db74>&#34;file1\0file2\0&#34;</span> | xargs -0 touch
-</code></pre></div><h3 id=manipulate-input-before-passing-to-program>Manipulate input before passing to program</h3>
-<p><code>-I</code> can be used to do this.
-Let&rsquo;s say you want to bulk rename all files in a folder.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ ls | xargs -I @@ mv @@ @@.sh
-</code></pre></div><p><code>@@</code> used in above example is just a variable, you can use any other symbols.</p>
-<h3 id=wait-before-executing-next-command>Wait before executing next command</h3>
-<p><code>-P</code> allows to do this. You can specify number of parellel executions.</p>
-<p>Below command executes <code>echo</code> on each <code>1,2,3,4</code> one by one with 1 sec sleep in between.
-Number after <code>-P</code> is used to specify number of parallel executions.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ echo <span style=color:#e6db74>&#34;1 2 3 4&#34;</span> | xargs -n <span style=color:#ae81ff>1</span> -P <span style=color:#ae81ff>1</span> bash -c <span style=color:#e6db74>&#39;sleep 1; echo $0&#39;</span>
-</code></pre></div><p>Let&rsquo;s say, you want to execute 2 commands simultaneity and wait 1 sec before next 2.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ echo <span style=color:#e6db74>&#34;1 2 3 4&#34;</span> | xargs -n <span style=color:#ae81ff>1</span> -P <span style=color:#ae81ff>2</span> bash -c <span style=color:#e6db74>&#39;sleep 1; echo $0&#39;</span>
-</code></pre></div>
-</div>
-</article>
-<div id=footer-post-container>
-<div id=footer-post>
-<div id=nav-footer style=display:none>
-<ul>
-<li><a href=/>Home</a></li>
-<li><a href=/posts>All posts</a></li>
-<li><a href=/tags>Tags</a></li>
-<li><a href=/categories>Categories</a></li>
-</ul>
-</div>
-<div id=toc-footer style=display:none>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#why-xargs>Why xargs?</a></li>
-<li><a href=#examples>Examples</a>
-<ul>
-<li><a href=#simple-use-case>Simple use case</a></li>
-<li><a href=#t-switch>-t switch</a></li>
-<li><a href=#0-switch>-0 switch</a></li>
-<li><a href=#manipulate-input-before-passing-to-program>Manipulate input before passing to program</a></li>
-<li><a href=#wait-before-executing-next-command>Wait before executing next command</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<div id=share-footer style=display:none>
-<ul>
-<li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f" aria-label=Facebook>
-<i class="fab fa-facebook fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&text=xargs%20linux%20command" aria-label=Twitter>
-<i class="fab fa-twitter fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=Linkedin>
-<i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&is_video=false&description=xargs%20linux%20command" aria-label=Pinterest>
-<i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="mailto:?subject=xargs%20linux%20command&body=Check out this article: https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f" aria-label=Email>
-<i class="fas fa-envelope fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=Pocket>
-<i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=reddit>
-<i class="fab fa-reddit fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&name=xargs%20linux%20command&description=The%20xargs%20utility%20reads%20space%2c%20tab%2c%20newline%20and%20end-of-file%20delimited%20strings%20from%20the%20standard%20input%20and%20executes%20utility%20with%20the%20strings%20as%20arguments.%0aWhy%20xargs%3f%20Some%20commands%20like%20grep%20can%20accept%20input%20from%20stdin%2c%20but%20others%20can%26rsquo%3bt%2c%20this%20is%20place%20where%20xargs%20came%20into%20picture.%0aIn%20layman%26rsquo%3bs%20terms%2c%20output%20of%20one%20command%20can%20be%20transfed%20to%20another%20command%20as%20a%20arguments.%20Piping%20outputs%20to%20some%20programs%20work%20%28like%20grep%2c%20awk%2c%20sort%2c%20uniq%2c%20etc%29%20but%2c%20it%20doesn%26rsquo%3bt%20work%20always%20%28e." aria-label=Tumblr>
-<i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
-</a>
-</li>
-<li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&t=xargs%20linux%20command" aria-label="Hacker News">
-<i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
-</a>
-</li>
-</ul>
-</div>
-<div id=actions-footer>
-<a id=menu-toggle class=icon href=# onclick="return $('#nav-footer').toggle(),!1" aria-label=Menu>
-<i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
-<a id=toc-toggle class=icon href=# onclick="return $('#toc-footer').toggle(),!1" aria-label=TOC>
-<i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
-<a id=share-toggle class=icon href=# onclick="return $('#share-footer').toggle(),!1" aria-label=Share>
-<i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
-<a id=top style=display:none class=icon href=# onclick="$('html, body').animate({scrollTop:0},'fast')" aria-label="Top of Page">
-<i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a>
-</div>
-</div>
-</div>
-<footer id=footer>
-<div class=footer-left>
-Copyright &copy; 2021 Dhananjay
-</div>
-<div class=footer-right>
-<nav>
-<ul>
-<li><a href=/>Home</a></li>
-<li><a href=/posts>All posts</a></li>
-<li><a href=/tags>Tags</a></li>
-<li><a href=/categories>Categories</a></li>
-</ul>
-</nav>
-</div>
-</footer>
-</div>
-</body>
-<link rel=stylesheet href=/lib/font-awesome/css/all.min.css>
-<script src=/lib/jquery/jquery.min.js></script>
+<a class=tag-link href=/tags/tutorial rel=tag>tutorial</a></div></div></header><div class=content itemprop=articleBody><p>The xargs utility reads space, tab, newline and end-of-file delimited strings from the standard input and executes utility with the strings as arguments.</p><h2 id=why-xargs>Why xargs?</h2><p>Some commands like <code>grep</code> can accept input from <code>stdin</code>, but others can&rsquo;t, this is place where xargs came into picture.</p><p>In layman&rsquo;s terms, output of one command can be transfed to another command as a arguments. Piping outputs to some programs work (like <code>grep</code>, <code>awk</code>, <code>sort</code>, <code>uniq</code>, etc) but, it doesn&rsquo;t work always (e.g. <code>kill</code>, <code>mkdir</code>, <code>touch</code>, etc).</p><h2 id=examples>Examples</h2><p>Examples are always a best way to learn about CLI programs. Let&rsquo;s dive into it.</p><h3 id=simple-use-case>Simple use case</h3><p>Make folder using output from other command. If nothing is given it&rsquo;ll pass input to <code>echo</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ echo <span style=color:#e6db74>&#34;my-direcory&#34;</span> | xargs mkdir
+</span></span></code></pre></div><h3 id=t-switch>-t switch</h3><ul><li><code>-t</code> switch will show what <code>xargs</code> is doing.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ echo <span style=color:#e6db74>&#34;my-directory-1 my-directory-2&#34;</span> | xargs -t mkdir
+</span></span><span style=display:flex><span>mkdir my-directory-1 my-directory-2
+</span></span></code></pre></div><ul><li>Pass outputs one by one.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ echo <span style=color:#e6db74>&#34;my-directory-1 my-directory-2&#34;</span> | xargs -t -n <span style=color:#ae81ff>1</span> mkdir
+</span></span><span style=display:flex><span>mkdir my-directory-1
+</span></span><span style=display:flex><span>mkdir my-directory-2
+</span></span></code></pre></div><h3 id=0-switch>-0 switch</h3><p>If input items are terminated by null character instead of white spaces.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ echo <span style=color:#e6db74>&#34;file1\0file2\0&#34;</span> | xargs -0 touch
+</span></span></code></pre></div><h3 id=manipulate-input-before-passing-to-program>Manipulate input before passing to program</h3><p><code>-I</code> can be used to do this.
+Let&rsquo;s say you want to bulk rename all files in a folder.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ ls | xargs -I @@ mv @@ @@.sh
+</span></span></code></pre></div><p><code>@@</code> used in above example is just a variable, you can use any other symbols.</p><h3 id=wait-before-executing-next-command>Wait before executing next command</h3><p><code>-P</code> allows to do this. You can specify number of parellel executions.</p><p>Below command executes <code>echo</code> on each <code>1,2,3,4</code> one by one with 1 sec sleep in between.
+Number after <code>-P</code> is used to specify number of parallel executions.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ echo <span style=color:#e6db74>&#34;1 2 3 4&#34;</span> | xargs -n <span style=color:#ae81ff>1</span> -P <span style=color:#ae81ff>1</span> bash -c <span style=color:#e6db74>&#39;sleep 1; echo $0&#39;</span>
+</span></span></code></pre></div><p>Let&rsquo;s say, you want to execute 2 commands simultaneity and wait 1 sec before next 2.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ echo <span style=color:#e6db74>&#34;1 2 3 4&#34;</span> | xargs -n <span style=color:#ae81ff>1</span> -P <span style=color:#ae81ff>2</span> bash -c <span style=color:#e6db74>&#39;sleep 1; echo $0&#39;</span>
+</span></span></code></pre></div></div></article><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=/>Home</a></li><li><a href=/posts>All posts</a></li><li><a href=/tags>Tags</a></li><li><a href=/categories>Categories</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents><ul><li><a href=#why-xargs>Why xargs?</a></li><li><a href=#examples>Examples</a><ul><li><a href=#simple-use-case>Simple use case</a></li><li><a href=#t-switch>-t switch</a></li><li><a href=#0-switch>-0 switch</a></li><li><a href=#manipulate-input-before-passing-to-program>Manipulate input before passing to program</a></li><li><a href=#wait-before-executing-next-command>Wait before executing next command</a></li></ul></li></ul></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f" aria-label=Facebook><i class="fab fa-facebook fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&text=xargs%20linux%20command" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&is_video=false&description=xargs%20linux%20command" aria-label=Pinterest><i class="fab fa-pinterest fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=xargs%20linux%20command&body=Check out this article: https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&title=xargs%20linux%20command" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&name=xargs%20linux%20command&description=The%20xargs%20utility%20reads%20space%2c%20tab%2c%20newline%20and%20end-of-file%20delimited%20strings%20from%20the%20standard%20input%20and%20executes%20utility%20with%20the%20strings%20as%20arguments.%0aWhy%20xargs%3f%20Some%20commands%20like%20grep%20can%20accept%20input%20from%20stdin%2c%20but%20others%20can%26rsquo%3bt%2c%20this%20is%20place%20where%20xargs%20came%20into%20picture.%0aIn%20layman%26rsquo%3bs%20terms%2c%20output%20of%20one%20command%20can%20be%20transfed%20to%20another%20command%20as%20a%20arguments.%20Piping%20outputs%20to%20some%20programs%20work%20%28like%20grep%2c%20awk%2c%20sort%2c%20uniq%2c%20etc%29%20but%2c%20it%20doesn%26rsquo%3bt%20work%20always%20%28e." aria-label=Tumblr><i class="fab fa-tumblr fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdhananjaylatkar.github.io%2fposts%2fxargs-linux-command%2f&t=xargs%20linux%20command" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick='return $("#nav-footer").toggle(),!1' aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick='return $("#toc-footer").toggle(),!1' aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick='return $("#share-footer").toggle(),!1' aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2022 Dhananjay</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/posts>All posts</a></li><li><a href=/tags>Tags</a></li><li><a href=/categories>Categories</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script>
 <script src=/js/main.js></script>
-<script src=/js/code-copy.js></script>
-</html>
+<script src=/js/code-copy.js></script></html>
