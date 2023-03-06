@@ -13,7 +13,7 @@ This cheatsheet contains must know vim tips and tricks.
 
 ### Horizontal Navigation
 
-- `i, j, k, l`
+- `h, j, k, l` : left, down, up, right
 - `w` : next word
 - `b` : prev (back) word
 - `0` : Beginning of line
@@ -43,6 +43,7 @@ This cheatsheet contains must know vim tips and tricks.
 - `C-f` : Scroll down by full page
 - `*` : search forward for word under cursor
 - `#` : search backward for word under cursor
+- `%` : jump to matching parentheses
 
 ## Buffers
 
