@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on Dhananjay's Blog</title><link>https://dhananjaylatkar.github.io/tags/git/</link><description>Recent content in git on Dhananjay's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Dhananjay</copyright><lastBuildDate>Fri, 18 Aug 2023 18:00:08 +0530</lastBuildDate><atom:link href="https://dhananjaylatkar.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>git rebase with upstream fork</title><link>https://dhananjaylatkar.github.io/posts/rebase_with_upstream_fork/</link><pubDate>Fri, 18 Aug 2023 18:00:08 +0530</pubDate><guid>https://dhananjaylatkar.github.io/posts/rebase_with_upstream_fork/</guid><description>This post details the instructions to sync forked repo with upstream.
+Steps to rebase Add original repo to fork as upstream
+git remote add upstream https://link/to/original/repo.git Fetch master (or main) from upstream
+git fetch upstream master Rebase current branch with upstream master
+git rebase upstream/master Force push to remote
+git push --force</description></item></channel></rss>
